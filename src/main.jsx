@@ -1,10 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { createRoot } from "react";
+import { StrictMode } from "react";
+import { RouterProvider } from "react-router";
+import router from "./Router";
+import MainContext from "./Contexts";
 
-createRoot(document.getElementById('root')).render(
+import "./base.css";
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <MainContext>
+      {
+        //? If wanna see More About react Router with DataMode see => https://reactrouter.com/start/data/installation
+      }
+      <RouterProvider router={router} />
+    </MainContext>
+  </StrictMode>
+);
