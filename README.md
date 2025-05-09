@@ -1,3 +1,11 @@
+# Proyecto Hackaton
+
+En este proyecto queremos replicar la app web de la Universidad (Moodle)
+
+Usando mejores diseños, Mejor experiencia de usuario (Tiempos de respuesta y Legibilidad)
+
+Dividiendo la app en Landing, Auth (Clerk), Courses
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
