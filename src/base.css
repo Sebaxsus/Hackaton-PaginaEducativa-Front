@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+:root {
+    --Bg-dark: black;
+    --Bg-light: beige;
+    --Text-dark: white;
+    --Text-light: black;
+    color: var(--Text-light);
+}
+
+body {
+    background-color: var(--Bg-light);
+}
+
+/* @media (prefers-color-scheme: light) {
+
+} */
+
+/* html {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+} */
