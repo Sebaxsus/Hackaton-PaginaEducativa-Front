@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 :root {
-    --Bg-dark: black;
-    --Bg-light: beige;
-    --Text-dark: white;
-    --Text-light: black;
-    color: var(--Text-light);
+    /* Agregar un fuente perso */
+    color-scheme: light dark; /* https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme */
+    /* Basicamente color-scheme verifica cual es el esquema de colores del sistema (OS) y escoje entre light o dark */
+    --Primary-color: black; /* Dark - Default */
+    --Secundary-color: #0f00e2;
+    --Primay-color-light: beige;
+    --Secundary-color-light: #744000;
+    
+    --Text-color: light-dark(var(--Primary-color), var(--Primay-color-light)); /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
+    --Bg-color: light-dark(var(--Primay-color-light), var(--Primary-color));
+
+    background-color: var(--Bg-color);
+    color: var(--Text-color);
 }
 
-body {
-    background-color: var(--Bg-light);
-}
 
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme */
 /* @media (prefers-color-scheme: light) {
 
 } */

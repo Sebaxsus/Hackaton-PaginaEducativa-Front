@@ -1,10 +1,10 @@
 const HomePage = () => {
   return (
-    <article className="p-4 flex flex-col gap-5 justify-center items-center">
+    <section className="p-4 flex flex-col gap-5 justify-center items-center">
       <header className="">
         <h2>Bienvenido a tu pagina Educativa</h2>
       </header>
-      <article className="p-2 grid grid-cols-3 grid-rows-2 gap-5 size-4/5 justify-items-center">
+      <article className="p-2 grid grid-cols-3 grid-rows-2 gap-y-5 gap-x-6 size-4/5 justify-items-center">
         {/* 
           Creo un array de el constructor new Array(5),
           Este array va a tener un tamaño de 5 (0-5 = 6)
@@ -22,7 +22,7 @@ const HomePage = () => {
         
       </article>
 
-    </article>
+    </section>
   );
 };
 
