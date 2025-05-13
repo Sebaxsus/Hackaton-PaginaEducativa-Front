@@ -9,16 +9,23 @@ const HomePage = () => {
           Creo un array de el constructor new Array(5),
           Este array va a tener un tamaño de 5 (0-5 = 6)
         */}
-        {Array.from(new Array(5)).map((_,i) => {
+        {/* {Array.from(new Array(5)).map((_,i) => {
+          
           if (i === 0) return (
-            <section className="bg-amber-800 [grid-area:1/1/1/3] w-full lg:h-[200px] md:h-[150px] sm:h-[100px] rounded-2xl hover:scale-105 hover:bg-amber-800/70">
+            <section key={`BentoHome-${i}`} className="bg-amber-800 [grid-area:1/1/1/3] w-full lg:h-[200px] md:h-[150px] sm:h-[100px] rounded-2xl hover:scale-105 hover:bg-amber-800/70">
             </section>
           ) 
           return (
-            <section className="bg-amber-500 rounded-2xl w-full hover:scale-105 hover:bg-amber-500/70">
+            <section key={`BentoHome-${i}`} className="bg-amber-500 rounded-2xl w-full hover:scale-105 hover:bg-amber-500/70">
             </section>
           )
         })}
+         */}
+
+         {Array.from(new Array(5)).map((_,i) => (
+            <section key={`BentoHome-${i}`} className={i === 0 ? "bg-amber-800 [grid-area:1/1/1/3] w-full h-[50px] lg:h-[200px] md:h-[150px] sm:h-[100px] rounded-2xl hover:scale-105 hover:bg-amber-800/70" : "bg-amber-500 rounded-2xl w-full hover:scale-105 hover:bg-amber-500/70"}>
+            </section>
+         ))}
         
       </article>
 

@@ -12,10 +12,21 @@
     --Text-color: light-dark(var(--Primary-color), var(--Primay-color-light)); /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
     --Bg-color: light-dark(var(--Primay-color-light), var(--Primary-color));
 
-    background-color: var(--Bg-color);
+    background: var(--Bg-color);
     color: var(--Text-color);
 }
 
+:root:has(option[value="theme-light"]:checked) {
+    color-scheme: light;
+}
+
+:root:has(option[value="theme-dark"]:checked) {
+    color-scheme: dark;
+}
+
+:root:has(option[value="theme-system"]:checked) {
+    color-scheme: light dark;
+}
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme */
 /* @media (prefers-color-scheme: light) {
