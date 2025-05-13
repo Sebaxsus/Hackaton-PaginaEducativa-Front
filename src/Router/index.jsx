@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 
 //TODO: Send a Imports to Elements Or Components
 import HomePage from "../App/HomePage";
+import ClassRoom from "../App/ClassRoom";
 import Layout from "../Layout";
 
 //? Example how make a Structure on React-Router https://reactrouter.com/start/data/routing#configuring-routes
@@ -24,6 +25,16 @@ const router = createBrowserRouter([
   {
     path: "/sing-up",
     // element : SingUp
+  },
+  {
+    path: "/class",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <ClassRoom />
+      }
+    ]
   },
   // {
   //   path: "/home",
