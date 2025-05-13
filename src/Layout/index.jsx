@@ -7,7 +7,13 @@ const Layout = () => {
   return (
     <>
       <header>
-        <nav></nav>
+        <nav>
+          <select name="" id="">
+            <option value="">System</option>
+            <option value="">Light</option>
+            <option value="">Dark</option>
+          </select>
+        </nav>
       </header>
       <Outlet />
       <footer></footer>
