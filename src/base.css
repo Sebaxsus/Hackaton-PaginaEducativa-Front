@@ -1,32 +1,79 @@
 @import "tailwindcss";
 
 :root {
-    /* Agregar un fuente perso */
-    color-scheme: light dark; /* https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme */
-    /* Basicamente color-scheme verifica cual es el esquema de colores del sistema (OS) y escoje entre light o dark */
-    --Primary-color: black; /* Dark - Default */
-    --Secundary-color: #2d1657;
-    --Primay-color-light: beige;
-    --Secundary-color-light: #744000;
-    
-    --Text-color: light-dark(var(--Primary-color), var(--Primay-color-light)); /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
-    --Bg-color: light-dark(var(--Primay-color-light), var(--Primary-color));
-    --Secudary-opt: light-dark(var(--Secundary-color-light), var(--Secundary-color));
+  /* Add a custom font */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme */
+  color-scheme: light dark;
+  /* Basically color-scheme checks what the system (OS) color scheme is and chooses between light or dark */
+  --Primary-color: black; /* Dark - Default */
+  --Secondary-color: #2d1657;
+  --Primary-color-light: beige;
+  --Secondary-color-light: #744000;
 
-    background: var(--Bg-color);
-    color: var(--Text-color);
+  /* This is Scheme for BackGround and Fonts y Buttons For Default*/
+  --BackGroundColor-light: #f5efff;
+  --ButtonsColor-light: #222831cb;
+  --FontColor-light: #222831;
+  --IconColor-light: #282a36;
+
+  --BackGroundColor: #352f44;
+  --ButtonsColor: #f5efff;
+  --FontColor: #faf0e6;
+  --IconColor: #faf0e6;
+
+  /* Test Colors Scheme... Sebastian decide*/
+  /* https://colorhunt.co/palette/f8ededff8225b43f3f173b45 */
+  /*https://colorhunt.co/palette/f79b722a4759ddddddeeeeee*/
+  --Primary-Scheme-light: #fe7743;
+  --Secondary-Scheme-light: #efeeea;
+  --Tertiary-Scheme-light: #273f4f;
+  --Quaternary-Scheme-light: #000000;
+
+  /* https://colorhunt.co/palette/352f445c5470b9b4c7faf0e6 */
+  --Primary-Scheme: #352f44;
+  --Secondary-Scheme: #5c5470;
+  --Tertiary-Scheme: #b9b4c7;
+  --Quaternary-Scheme: #faf0e6;
+
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
+  --Bg-color: light-dark(var(--BackGroundColor-light), var(--BackGroundColor));
+  --Text-color: light-dark(var(--FontColor-light), var(--FontColor));
+  --Buttons-color: light-dark(var(--ButtonsColor-light), var(--ButtonsColor));
+
+  --Primary-Color: light-dark(
+    var(--Primary-Scheme-light),
+    var(--Primary-Scheme)
+  );
+  --Secondary-Color: light-dark(
+    var(--Secondary-Scheme-light),
+    var(--Secondary-Scheme)
+  );
+  --Tertiary-Color: light-dark(
+    var(--Tertiary-Scheme-light),
+    var(--Tertiary-Scheme)
+  );
+  --Quaternary-Color: light-dark(
+    var(--Quaternary-Scheme-light),
+    var(--Quaternary-Scheme)
+  );
+
+  background: var(--Bg-color);
+  color: var(--Text-color);
+  transition: background-color 0.8s;
+  padding: 0;
+  margin: 0;
 }
 
 :root:has(option[value="theme-light"]:checked) {
-    color-scheme: light;
+  color-scheme: light;
 }
 
 :root:has(option[value="theme-dark"]:checked) {
-    color-scheme: dark;
+  color-scheme: dark;
 }
 
 :root:has(option[value="theme-system"]:checked) {
-    color-scheme: light dark;
+  color-scheme: light dark;
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme */

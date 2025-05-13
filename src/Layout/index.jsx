@@ -4,16 +4,16 @@ import { useGlobalContext } from "../Contexts";
 //* Example how use Layout... We can make More
 //? Link https://reactrouter.com/start/data/routing#nested-routes
 
+import HeadIcons from "./HeadIcons";
+
 const Layout = () => {
   const { toggleTheme } = useGlobalContext();
 
   return (
     <>
-      <header>
-        <nav className="bg-[var(--Secudary-opt)] flex justify-between w-full p-2">
-          <div>
-            <h4>User</h4>
-          </div>
+      <header className="bg-[var(--Secondary-Color)] w-full h-15 p-2 flex justify-between items-center">
+        <HeadIcons />
+        <nav className="w-auto">
           <select
             name=""
             id="themePicker"
@@ -25,6 +25,10 @@ const Layout = () => {
             <option value="theme-dark">Dark</option>
           </select>
         </nav>
+        <section>
+          <div>Log In</div>
+          <div>Sign Up</div>
+        </section>
       </header>
       <Outlet />
       <footer></footer>
