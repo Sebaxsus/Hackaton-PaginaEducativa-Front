@@ -2,12 +2,19 @@ import { createBrowserRouter } from "react-router";
 
 //TODO: Send a Imports to Elements Or Components
 import HomePage from "../App/HomePage";
+import Layout from "../Layout";
 
 //? Example how make a Structure on React-Router https://reactrouter.com/start/data/routing#configuring-routes
 const router = createBrowserRouter([
   {
-    index: true,
-    element : <HomePage />,
+    index: "/",
+    element : <Layout/>,
+    children: [
+      {
+        index: true,
+        element: <HomePage />
+      }
+    ]
     // Component: HomePage
   },
   {
