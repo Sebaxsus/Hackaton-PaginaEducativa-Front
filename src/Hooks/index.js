@@ -2,12 +2,11 @@
 import { useState, useCallback } from "react";
 
 export function useHookContext() {
-  const [theme, setTheme] = useState("system");
+  const [theme, setTheme] = useState("theme-system");
 
   const toggleTheme = useCallback(
     (e) => {
       setTheme(e.target.value);
-      console.log(theme);
     },
     [theme]
   );

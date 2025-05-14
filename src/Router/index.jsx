@@ -4,38 +4,41 @@ import { createBrowserRouter } from "react-router";
 import HomePage from "../App/HomePage";
 import ClassRoom from "../App/ClassRoom";
 import Layout from "../Layout";
+import App from "../App";
 
 //? Example how make a Structure on React-Router https://reactrouter.com/start/data/routing#configuring-routes
 const router = createBrowserRouter([
   {
-    index: "/",
-    element : <Layout/>,
-    children: [
-      {
-        index: true,
-        element: <HomePage />
-      }
-    ]
-    // Component: HomePage
-  },
-  {
-    path: "/log-in",
-    // element : Login
-  },
-  {
-    path: "/sing-up",
-    // element : SingUp
-  },
-  {
-    path: "/class",
+    path: "/",
     element: <Layout />,
     children: [
       {
         index: true,
-        element: <ClassRoom />
-      }
-    ]
+        element: <HomePage />,
+      },
+    ],
+    // Component: HomePage
   },
+
+  { path: "/test", Component: App },
+  //   {
+  //     path: "/log-in",
+  //     // element : Login
+  //   },
+  //   {
+  //     path: "/sing-up",
+  //     // element : SingUp
+  //   },
+  //   {
+  //     path: "/class",
+  //     element: <Layout />,
+  //     children: [
+  //       {
+  //         index: true,
+  //         element: <ClassRoom />,
+  //       },
+  //     ],
+  //   },
   // {
   //   path: "/home",
   //   // errorElement : Error
