@@ -1,34 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Limelight&family=Poiret+One&family=Syne+Mono&display=swap");
+
 @import "tailwindcss";
 
-:root {
-    /* Agregar un fuente perso */
-    color-scheme: light dark; /* https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme */
-    /* Basicamente color-scheme verifica cual es el esquema de colores del sistema (OS) y escoje entre light o dark */
-    --Primary-color: black; /* Dark - Default */
-    --Secundary-color: #2d1657;
-    --Primay-color-light: beige;
-    --Secundary-color-light: #744000;
-    
-    --Text-color: light-dark(var(--Primary-color), var(--Primay-color-light)); /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
-    --Bg-color: light-dark(var(--Primay-color-light), var(--Primary-color));
-    --Secudary-opt: light-dark(var(--Secundary-color-light), var(--Secundary-color));
-
-    background: var(--Bg-color);
-    color: var(--Text-color);
+/* Example how Import Theme and Use*/
+@theme {
+  --font-Limelight: "Limelight", sans-serif;
+  --font-PoiretOne: "Poiret One", sans-serif;
+  --font-SyneMono: "Syne Mono", monospace;
 }
+/* Use 
+ <className="font-Limelight"/>
+*/
 
+:root {
+  /* Add a custom font */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme */
+  color-scheme: light dark;
+  /* Basically color-scheme checks what the system (OS) color scheme is and chooses between light or dark */
+  --Primary-color: black; /* Dark - Default */
+  --Secondary-color: #2d1657;
+  --Primary-color-light: beige;
+  --Secondary-color-light: #744000;
+
+  /* This is Scheme for BackGround and Fonts y Buttons For Default*/
+  --BackGroundColor-light: #f5efff;
+  --ButtonsColor-light: #222831cb;
+  --FontColor-light: #222831;
+  --IconColor-light: #282a36;
+
+  --BackGroundColor: #352f44;
+  --ButtonsColor: #f5efffcb;
+  --FontColor: #faf0e6;
+  --IconColor: #faf0e6;
+
+  --Buttons-size: 2.25rem;
+
+  /* Test Colors Scheme... Sebastian decide*/
+  /* https://colorhunt.co/palette/f8ededff8225b43f3f173b45 */
+  /*https://colorhunt.co/palette/f79b722a4759ddddddeeeeee*/
+  --Primary-Scheme-light: #fe7743;
+  --Secondary-Scheme-light: #efeeea;
+  --Tertiary-Scheme-light: #273f4f;
+  --Quaternary-Scheme-light: #000000;
+
+  /* https://colorhunt.co/palette/352f445c5470b9b4c7faf0e6 */
+  --Primary-Scheme: #f5eedd;
+  --Secondary-Scheme: #7ae2cf;
+  --Tertiary-Scheme: #077a7d;
+  --Quaternary-Scheme: #06202b;
+
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
+  --Bg-color: light-dark(var(--BackGroundColor-light), var(--BackGroundColor));
+  --Text-color: light-dark(var(--FontColor-light), var(--FontColor));
+
+  --Buttons-color: light-dark(var(--ButtonsColor-light), var(--ButtonsColor));
+
+  --ButtonText-color: light-dark(
+    var(--BackGroundColor-light),
+    var(--BackGroundColor)
+  );
+
+  --Primary-Color: light-dark(
+    var(--Primary-Scheme-light),
+    var(--Primary-Scheme)
+  );
+  --Secondary-Color: light-dark(
+    var(--Secondary-Scheme-light),
+    var(--Secondary-Scheme)
+  );
+  --Tertiary-Color: light-dark(
+    var(--Tertiary-Scheme-light),
+    var(--Tertiary-Scheme)
+  );
+  --Quaternary-Color: light-dark(
+    var(--Quaternary-Scheme-light),
+    var(--Quaternary-Scheme)
+  );
+
+  background: var(--Bg-color);
+  color: var(--Text-color);
+  transition: background-color 0.8s, color 0.5s;
+  padding: 0;
+  margin: 0;
+}
+/* 
+
+* Best Compatibility with A settings SetUp...
 :root:has(option[value="theme-light"]:checked) {
-    color-scheme: light;
+  color-scheme: light;
 }
 
 :root:has(option[value="theme-dark"]:checked) {
-    color-scheme: dark;
+  color-scheme: dark;
 }
 
 :root:has(option[value="theme-system"]:checked) {
-    color-scheme: light dark;
+  color-scheme: light dark;
+} */
+
+:root:has(input[id="toggleTheme"]:checked) {
+  color-scheme: light;
 }
 
+:root:has(input[id="toggleTheme"]) {
+  color-scheme: dark;
+}
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme */
 /* @media (prefers-color-scheme: light) {
 
@@ -39,3 +115,40 @@
     height: 100vh;
     width: 100vw;
 } */
+
+button {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: background-color 0.66s, opacity 0.66s;
+}
+
+.btn-icon > svg {
+  width: var(--Buttons-size);
+  fill: none;
+  stroke: var(--Buttons-color);
+  stroke-width: 1.5;
+}
+.btn-icon > svg > path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn-text {
+  border-radius: 12px;
+  padding: 4px;
+  background-color: var(--Buttons-color);
+  color: var(--ButtonText-color);
+}
+
+.btn-text:hover {
+  transform: scale(1.05);
+  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.15);
+}
+.btn-text:active {
+  transform: scale(1.1);
+  box-shadow: 2.5px 5px 15px rgb(0, 0, 0, 0.33);
+  opacity: 0.6;
+}
