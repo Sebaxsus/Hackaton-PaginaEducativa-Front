@@ -21,7 +21,7 @@ const Layout = () => {
         <section className="w-[100%] h-20 p-10 border-b-1 flex items-center justify-between">
           <div className="typewriter">
             <h1 className="font-Limelight text-4xl font-extrabold w-150 justify-self-start self-start">
-              ClassRoom
+              ClassRoom.
             </h1>
           </div>
           <nav className="flex flex-row items-center gap-[1rem]">
