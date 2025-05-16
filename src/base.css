@@ -28,10 +28,16 @@
   --FontColor-light: #222831;
   --IconColor-light: #282a36;
 
+  --Box-Shadow-tinny-light: rgb(0, 0, 0, 0.15);
+  --Box-Shadow-bold-light: rgb(0, 0, 0, 0.33);
+
   --BackGroundColor: #352f44;
   --ButtonsColor: #f5efffcb;
   --FontColor: #faf0e6;
   --IconColor: #faf0e6;
+
+  --Box-Shadow-tinny: rgb(255, 255, 255, 0.15);
+  --Box-Shadow-bold: rgb(255, 255, 255, 0.33);
 
   --Buttons-size: 2.25rem;
 
@@ -44,14 +50,23 @@
   --Quaternary-Scheme-light: #000000;
 
   /* https://colorhunt.co/palette/352f445c5470b9b4c7faf0e6 */
-  --Primary-Scheme: #f5eedd;
-  --Secondary-Scheme: #7ae2cf;
-  --Tertiary-Scheme: #077a7d;
-  --Quaternary-Scheme: #06202b;
+  --Primary-Scheme: #222831;
+  --Secondary-Scheme: #31363f;
+  --Tertiary-Scheme: #76abae;
+  --Quaternary-Scheme: #eeeeee;
 
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
   --Bg-color: light-dark(var(--BackGroundColor-light), var(--BackGroundColor));
   --Text-color: light-dark(var(--FontColor-light), var(--FontColor));
+
+  --BoxShadow-tinny: light-dark(
+    var(--Box-Shadow-tinny-light),
+    var(--Box-Shadow-tinny)
+  );
+  --BoxShadow-bold: light-dark(
+    var(--Box-Shadow-bold-light),
+    var(--Box-Shadow-bold)
+  );
 
   --Buttons-color: light-dark(var(--ButtonsColor-light), var(--ButtonsColor));
 
@@ -145,10 +160,43 @@ button {
 
 .btn-text:hover {
   transform: scale(1.05);
-  box-shadow: 2.5px 5px 10px rgb(0, 0, 0, 0.15);
+  box-shadow: 2.5px 5px 10px var(--BoxShadow-tinny);
 }
 .btn-text:active {
   transform: scale(1.1);
-  box-shadow: 2.5px 5px 15px rgb(0, 0, 0, 0.33);
+  box-shadow: 2.5px 5px 15px var(--BoxShadow-bold);
   opacity: 0.6;
+  width: auto;
+  text-align: left;
+}
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }

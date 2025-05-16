@@ -3,6 +3,14 @@ import { useState, useCallback } from "react";
 
 export function useHookContext() {
   const [theme, setTheme] = useState("theme-system");
+  const [popUp, setPopUp] = useState(false);
+
+  const showPopUp = useCallback(() => {
+    setPopUp(true);
+    // setTimeout(() => {
+    //   setPopUp(false);
+    // }, 2000);
+  }, [popUp]);
 
   const toggleTheme = useCallback(
     (e) => {
@@ -11,5 +19,5 @@ export function useHookContext() {
     [theme]
   );
 
-  return [theme, toggleTheme];
+  return [theme, toggleTheme, popUp, showPopUp];
 }

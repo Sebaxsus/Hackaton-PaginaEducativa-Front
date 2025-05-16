@@ -5,13 +5,14 @@ import router from "./Router";
 import MainContext from "./Contexts";
 
 // Clerk SDK Import
-import { ClerkProvider } from "@clerk/clerk-react"
+import { ClerkProvider } from "@clerk/clerk-react";
 
 import "./base.css";
 
-// TODO: Toca importar el .env, Se me olvido lo de vite.env SJJS 
-const PUBLISHALBE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
-console.log("Key?: ", PUBLISHALBE_KEY, import.meta.env.VITE_PRUEBA)
+// TODO: Toca importar el .env, Se me olvido lo de vite.env SJJS
+const PUBLISHALBE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+console.log(PUBLISHALBE_KEY);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <MainContext>
