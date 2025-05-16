@@ -39,7 +39,7 @@ const App = () => {
             <h2 className="font-Limelight text-7xl text-[var(--Tertiary-Color)]">
               Transform Your Learning Experience Sign Up Now!!!
             </h2>
-            <h3 className="--font-PoiretOne text-xl pt-6">
+            <h3 className="--font-PoiretOne text-sm sm:text-lg md:text-lg lg:text-xl xl:text-2xl pt-6">
               Join our learning community by filling out our quick and easy
               registration form. Whether you're a student ready to start a
               course or a teacher sharing valuable feedback, this form helps us
@@ -80,14 +80,14 @@ const App = () => {
           id="Home"
           className="w-[85%] h-auto flex flex-col items-baseline justify-center gap-20"
         >
-          <h2 className="font-Limelight text-5xl font-extrabold w-200">
+          <h2 className="font-Limelight text-sm sm:text-xl md:text-xl lg:text-2xl xl:text-4xl w-full font-extrabold text-center">
             Start Your Learning Journey Today!
           </h2>
           <p className="font-PoiretOne text-2xl self-end">
             "Empower your future with a classroom designed for flexibility,
             engagement, and growth"
           </p>
-          <h3 className="font-SyneMono text-4xl self-center w-300 text-center ">
+          <h3 className="font-SyneMono text-sm sm:text-lg md:text-lg lg:text-xl xl:text-2xl self-center w-300 text-center ">
             Join a new kind of digital classroom where students and teachers
             connect, share, and grow. Fill out our quick form to get started and
             become part of an innovative learning experience.
