@@ -14,3 +14,17 @@
   font-size: 1.25rem;
   line-height: calc(1.75 / 1.25);
 }
+
+.features > .items {
+  height: 100%;
+  width: 100%;
+  background-color: var(--Quaternary-Scheme);
+  box-shadow: 2;
+  box-shadow: 2.5px 5px 10px var(--BoxShadow-tinny);
+}
+.features > .items:hover {
+  transform: scale(1.05);
+  box-shadow: 2.5px 5px 15px var(--BoxShadow-bold);
+  border-radius: 8px;
+  background-color: var(--Tertiary-Scheme);
+}

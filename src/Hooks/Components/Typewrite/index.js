@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useTypewriter = ({ text, speed = 100, pause = 5000 }) => {
+export const useTypewriter = ({ text, speed = 100, pause = 2000 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
@@ -29,7 +29,7 @@ export const useTypewriter = ({ text, speed = 100, pause = 5000 }) => {
     }
 
     return () => clearTimeout(typingTimeout);
-  }, [index, isDeleting, text, speed, pause]);
+  }, [index, isDeleting]);
 
   return [displayedText];
 };

@@ -11,10 +11,10 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 const MainContext = ({ children }) => {
   //TODO: Import a Data to make a Values
-  const [theme, toggleTheme] = useHookContext();
+  const [theme, toggleTheme, popUp, showPopUp] = useHookContext();
 
   return (
-    <GlobalContext.Provider value={{ theme, toggleTheme }}>
+    <GlobalContext.Provider value={{ theme, toggleTheme, popUp, showPopUp }}>
       <QueryClientProvider client={GlobalQuery}>{children}</QueryClientProvider>
     </GlobalContext.Provider>
   );

@@ -1,6 +1,6 @@
-const HeadIcons = () => {
+const HeadIcons = ({ popUp }) => {
   return (
-    <section className="flex flex-row items-center justify-between w-20 h-f">
+    <section className="flex flex-row items-center justify-between w-30 h-f">
       <button className="btn-icon hover:scale-110">
         <svg viewBox="0 0 24 24">
           <circle cx="12" cy="9" r="3" />
@@ -8,10 +8,23 @@ const HeadIcons = () => {
           <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" />
         </svg>
       </button>
-      <button className="btn-icon [--Buttons-size:1.5rem] hover:scale-110">
+      <button
+        className="btn-icon [--Buttons-size:1.5rem] hover:scale-110"
+        onClick={popUp}
+      >
         <svg viewBox="0 0 24 24">
           <path d="M7.84308 20.1979C9.8718 21.3993 10.8862 22 12 22C13.1138 22 14.1282 21.3993 16.1569 20.1979L16.8431 19.7915C18.8718 18.5901 19.8862 17.9894 20.4431 17C21 16.0106 21 14.8092 21 12.4063M20.8147 8C20.7326 7.62759 20.6141 7.3038 20.4431 7C19.8862 6.01057 18.8718 5.40987 16.8431 4.20846L16.1569 3.80211C14.1282 2.6007 13.1138 2 12 2C10.8862 2 9.8718 2.6007 7.84308 3.80211L7.15692 4.20846C5.1282 5.40987 4.11384 6.01057 3.55692 7C3 7.98943 3 9.19084 3 11.5937V12.4063C3 14.8092 3 16.0106 3.55692 17C3.78326 17.4021 4.08516 17.74 4.5 18.0802" />
           <circle cx="12" cy="12" r="3" />
+        </svg>
+      </button>
+      <button className="btn-icon hover:scale-110">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className="[--Buttons-size:1.25rem] hover:[--Buttons-color:#D37676]"
+        >
+          <path d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15" />
+          <path d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.3531 21.8897 19.1752 21.9862 17 21.9983M9.00195 17C9.01406 19.175 9.11051 20.3529 9.87889 21.1213C10.5202 21.7626 11.4467 21.9359 13 21.9827" />
         </svg>
       </button>
     </section>
