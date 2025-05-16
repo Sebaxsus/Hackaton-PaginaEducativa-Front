@@ -4,6 +4,9 @@ import { useThemeLayout } from "../Hooks/Layout";
 import Typewriter from "../Components/Typewriter";
 import { useNavigate } from "react-router";
 
+// Clerk Imports
+import { SignInButton, SignIn } from "@clerk/clerk-react";
+
 const App = () => {
   const [theme, switchTheme] = useThemeLayout();
   const navigate = useNavigate();

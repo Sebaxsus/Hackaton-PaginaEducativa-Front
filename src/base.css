@@ -179,6 +179,7 @@ button {
   padding-right: 1ch;
   animation: typing 1.2s steps(12, end) infinite alternate,
     blink-caret 0.75s step-end infinite;
+  animation-delay: 2s;
 }
 
 /* The typing effect */

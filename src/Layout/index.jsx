@@ -2,6 +2,9 @@ import { Outlet } from "react-router";
 import { useThemeLayout } from "../Hooks/Layout";
 import { useGlobalContext } from "../Contexts";
 
+// Clerk Imports
+import { SignIn, SignInButton, SignOutButton, SignedOut, UserButton } from "@clerk/clerk-react";
+
 //* Example how use Layout... We can make More
 //? Link https://reactrouter.com/start/data/routing#nested-routes
 
@@ -27,6 +30,7 @@ const Layout = () => {
           <nav className="flex flex-row items-center gap-[1rem]">
             <ButtonTheme toggle={switchTheme} value={theme} />
             <HeadIcons popUp={showPopUp} />
+            <UserButton />
           </nav>
         </section>
       </header>

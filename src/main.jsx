@@ -11,7 +11,6 @@ import "./base.css";
 
 // TODO: Toca importar el .env, Se me olvido lo de vite.env SJJS
 const PUBLISHALBE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-console.log(PUBLISHALBE_KEY);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -19,7 +18,9 @@ createRoot(document.getElementById("root")).render(
       {
         //? If wanna see More About react Router with DataMode see => https://reactrouter.com/start/data/installation
       }
-      <RouterProvider router={router} />
+      <ClerkProvider publishableKey={PUBLISHALBE_KEY} afterSignOutUrl={"/"}>
+        <RouterProvider router={router} />
+      </ClerkProvider>
     </MainContext>
   </StrictMode>
 );
