@@ -17,8 +17,8 @@ const Auth = ({ children }) => {
                         <h1>
                             Debe autenticarse para acceder a este contenido
                         </h1>
-                        <figure className="w-1/2 h-1/2 aspect-square text-center">
-                            <img src="https://http.cat/401" alt="Imagen de un gato afuera de una puerta" />
+                        <figure className="w-1/2 h-1/2 aspect-square text-center flex flex-col items-center p-6">
+                            <img src="https://http.cat/401" alt="Imagen de un gato afuera de una puerta" className="h-[-webkit-fill-available] aspect-square"/>
                             <figcaption>Imagen de un gato afuera de una puerta</figcaption>
                         </figure>
                         <button onClick={() => { navigate("/") }} className="btn-text">
